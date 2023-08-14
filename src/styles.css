@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+.content {
+  padding: 60px 30px;
+}
+
+.content > .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header > .right-section {
+  align-self: center;
+}

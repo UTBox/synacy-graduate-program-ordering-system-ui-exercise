@@ -1,0 +1,27 @@
+
+<div class="content">
+  <div class="header">
+    <h1>Trending Products</h1>
+
+    <div class="right-section">
+      <div class="cart" (click)="goToCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="order-count">{{ cart.length }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-list">
+    <div *ngFor="let product of productList" class="item-card">
+      <div class="header">
+        <div class="name">{{ product.name }}</div>
+      </div>
+      <div class="body">
+        <div class="description">{{ product.description }}</div>
+        <div class="price">$ {{ product.price }}</div>
+
+        <button class="btn m-t-18 self-right" (click)="addToCart(product)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

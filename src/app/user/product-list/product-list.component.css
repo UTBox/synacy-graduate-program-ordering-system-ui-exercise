@@ -1,0 +1,73 @@
+.cart {
+  position: relative;
+}
+
+.cart > .order-count {
+  position: absolute;
+  top: -19px;
+  right: -10px;
+  padding: 3px;
+  border-radius: 20%;
+  background: lightcoral;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-list > .item-card {
+  width: 19%;
+  border: 1px solid rgba(244, 242, 240, 0.51);
+  min-height: 150px;
+  border-radius: 6px;
+  box-shadow: rgba(40, 41, 66, 0.14) 0px 6.95812px 11.5969px -9.27749px;
+  margin-top: 18px;
+}
+
+.product-list > .item-card > .header {
+  background: lightblue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-list > .item-card > .body {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-list > .item-card > .body, .product-list > .item-card > .header {
+  padding: 22px;
+}
+
+.product-list > .item-card .name, .product-list > .item-card .price {
+  font-size: 16px;
+}
+
+.product-list > .item-card .price {
+
+}
+
+.product-list > .item-card .description {
+  font-size: 14px;
+}
+
+.btn {
+  border: none;
+  border-radius: 2px;
+  padding: 13px 28px;
+  background: aliceblue;
+}
+
+.btn:hover {
+  background: lightgrey;
+}
+
+.m-t-18 {
+  margin-top: 18px;
+}
+
+.self-right {
+  align-self: flex-end;
+}

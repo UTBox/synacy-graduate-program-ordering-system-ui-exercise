@@ -1,0 +1,47 @@
+<div class="content">
+  <a (click)="goBack()">< Back</a>
+  <div style="max-width: 500px">
+    <div class="header">
+      <h1>Cart</h1>
+    </div>
+
+    <div class="ordered-products">
+      <div *ngFor="let groupedProduct of cartGroupedProducts" class="item">
+        <div class="details">
+          <div class="name">
+            {{ groupedProduct[0].name }}
+            <br>
+            $ {{ groupedProduct[0].price }}
+          </div>
+          <div class="right-section">
+            <div class="quantity">
+              <div class="subtract">
+                <i class="fa-solid fa-minus"></i>
+              </div>
+              <div class="count">{{ groupedProduct.length }}</div>
+              <div class="add">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="total-amount">
+          <div>$ 100.00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-summary">
+
+      <div class="total">
+        <label>Order Total</label>
+        <div>$ 1000</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button class="order-btn">Order</button>
+    </div>
+  </div>
+</div>
