@@ -1,16 +1,18 @@
-.content {
+.body {
   width: 300px;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.content h1 {
+.header h1{
   display: flex;
   justify-content: center;
-  font-family: sans-serif;
+  font-family:  "Roboto Light", serif;
 }
 
 .content label {
@@ -19,13 +21,19 @@
   font-weight: bold;
 }
 
-.content input[type="text"],
-.content input[type="number"]{
+.body input[type="text"],
+.body input[type="number"]{
   width: 94%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
+}
+
+.body label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .content button[type="submit"] {
@@ -35,4 +43,17 @@
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  .back-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
 }

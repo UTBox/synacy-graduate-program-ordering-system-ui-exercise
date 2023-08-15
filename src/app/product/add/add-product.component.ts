@@ -16,8 +16,8 @@ export class AddProductComponent {
     this.addProductForm = new FormGroup<any>({
       name : new FormControl(''),
       description: new FormControl(''),
-      productQuantity : new FormControl(0),
-      unitPrice : new FormControl(0)
+      quantity : new FormControl(),
+      unitPrice : new FormControl()
     })
   }
 
