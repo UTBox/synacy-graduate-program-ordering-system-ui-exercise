@@ -11,7 +11,7 @@ export class ProductComponent implements OnInit {
 
   public actionClass: string = 'actions';
   public productsInPage: any = {};
-  private readonly MAX_LIMIT: number = 2
+  private readonly MAX_LIMIT: number = 6
 
 
   constructor(private productService: ProductService) {

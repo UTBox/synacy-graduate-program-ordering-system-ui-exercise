@@ -1,10 +1,15 @@
 .content {
-  padding: 50px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  font-family: 'lato', sans-serif;
 }
 
 .actions {
@@ -16,10 +21,25 @@
   display: table;
   width: 100%;
   border-collapse: collapse;
+  font-family: 'lato', sans-serif;
+}
+
+h1 {
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
 }
 
 tr > th, tr > td {
   border: 1px solid black;
   text-align: left;
-  padding: 5px;
+  padding: 8px;
+}
+
+thead {
+  background-color: blanchedalmond;
+}
+
+tbody th {
+  background-color: cornflowerblue;
 }

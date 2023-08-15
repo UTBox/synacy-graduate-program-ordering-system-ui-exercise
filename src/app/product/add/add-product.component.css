@@ -1,0 +1,38 @@
+.content {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.content label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.content input[type="text"],
+.content input[type="number"]{
+  width: 94%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.content button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}

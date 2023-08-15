@@ -1,9 +1,11 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {IProduct} from "../model/product.model";
 
 @Injectable({providedIn: 'root'})
 export class ProductRepository {
 
+  private readonly baseUrl = 'api/v1';
   private readonly CONTENT_TYPE = 'application/json';
   private readonly headers;
 
@@ -14,7 +16,12 @@ export class ProductRepository {
   }
 
   public getProducts(max: number, page: number) {
-    const getProductsUrl = 'api/v1/products?max=' + max + '&page=' + page;
+    const getProductsUrl = this.baseUrl + '/products?max=' + max + '&page=' + page;
     return this.httpClient.get(getProductsUrl, {headers: this.headers});
+  }
+
+  public createProduct(requestBody: IProduct){
+    const createProductUrl = this.baseUrl + '/product';
+    return this.httpClient.post<any>(createProductUrl, requestBody, {headers: this.headers});
   }
 }
