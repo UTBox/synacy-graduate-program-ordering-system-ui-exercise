@@ -11,7 +11,7 @@ export class ProductService {
   constructor(private productRepository: ProductRepository) {
   }
 
-  public fetchProducts(): Observable<any> {
-    return this.productRepository.getProducts();
+  public fetchProducts(max: number, page: number): Observable<any> {
+    return this.productRepository.getProducts(max,page);
   }
 }

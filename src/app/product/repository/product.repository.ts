@@ -13,8 +13,8 @@ export class ProductRepository {
     })
   }
 
-  public getProducts() {
-    const getProductsUrl = 'api/v1/product';
+  public getProducts(max: number, page: number) {
+    const getProductsUrl = 'api/v1/products?max=' + max + '&page=' + page;
     return this.httpClient.get(getProductsUrl, {headers: this.headers});
   }
 }
