@@ -1,0 +1,28 @@
+.actions{
+  display: flex;
+  align-items: center;
+}
+
+.btn{
+  padding: 8px 16px;
+}
+
+.content{
+  padding: 50px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+label{
+  font-weight: bold;
+}

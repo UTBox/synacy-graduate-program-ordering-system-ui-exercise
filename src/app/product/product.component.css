@@ -23,6 +23,10 @@ tr > th, tr > td {
   border: solid 1px lightgrey;
 }
 
+td{
+  padding: 5px;
+}
+
 .btn{
   padding: 8px 16px;
 }

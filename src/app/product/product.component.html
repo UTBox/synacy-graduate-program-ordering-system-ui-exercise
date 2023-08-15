@@ -3,7 +3,8 @@
     <h1>Products</h1>
 
     <div class="actions">
-      <button (click) = "addProduct()" class="btn">Add Product</button>
+<!--      <app-button [buttonText] = "'Add Product'" (clickAction)="addProduct()"></app-button>-->
+    <button (click)="addProduct()" routerLink="add">Add Product</button>
     </div>
   </div>
 
@@ -16,15 +17,16 @@
           <th>Description</th>
           <th>Price</th>
           <th>Quantity</th>
+<!--          <th>Actions</th>-->
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Bag</td>
-          <td>Test description</td>
-          <td>$ 10.00</td>
-          <td>5</td>
+        <tr *ngFor="let product of productsInPage.content">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.currency + ' ' + product.unitPrice}}</td>
+          <td>{{ product.productQuantity }}</td>
         </tr>
       </tbody>
     </table>
