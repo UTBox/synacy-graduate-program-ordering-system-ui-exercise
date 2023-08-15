@@ -1,0 +1,25 @@
+.content {
+  padding: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.body table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr > th, tr > td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 5px;
+}

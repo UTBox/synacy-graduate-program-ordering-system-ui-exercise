@@ -1,10 +1,32 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ProductService} from "./service/product.service";
+import {PageResponse} from "./model/page-response.model";
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
 
+  public actionClass : string = 'actions';
+  public productsInPage : any = {};
+
+  constructor(private productService: ProductService) {
+  }
+  public addProduct() {
+    console.log('add product');
+  }
+
+  ngOnInit() {
+    this.initializeProducts()
+  }
+
+  private initializeProducts() {
+    this.productService.fetchProducts()
+      .subscribe({next: (data: PageResponse) => {
+      console.log('Response:', data);
+      this.productsInPage = data;
+      }})
+  }
 }
