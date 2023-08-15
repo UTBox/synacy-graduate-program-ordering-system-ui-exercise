@@ -9,11 +9,12 @@ import {PageResponse} from "./model/page-response.model";
 })
 export class ProductComponent implements OnInit {
 
-  public actionClass : string = 'actions';
-  public productsInPage : any = {};
+  public actionClass: string = 'actions';
+  public productsInPage: any = {};
 
   constructor(private productService: ProductService) {
   }
+
   public addProduct() {
     console.log('add product');
   }
@@ -24,9 +25,11 @@ export class ProductComponent implements OnInit {
 
   private initializeProducts() {
     this.productService.fetchProducts()
-      .subscribe({next: (data: PageResponse) => {
-      console.log('Response:', data);
-      this.productsInPage = data;
-      }})
+      .subscribe({
+        next: (data: PageResponse) => {
+          console.log('Response:', data);
+          this.productsInPage = data;
+        }
+      })
   }
 }
