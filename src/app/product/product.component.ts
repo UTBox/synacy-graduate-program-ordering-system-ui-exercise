@@ -10,7 +10,7 @@ import {PageResponse} from "./model/page-response.model";
 export class ProductComponent implements OnInit {
 
   public productsInPage: any = {};
-  public readonly MAX_LIMIT = 5;
+  public readonly MAX_LIMIT = 20;
   constructor(private productService: ProductService) {
   }
   public addProduct() {

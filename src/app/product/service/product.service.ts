@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {ProductRepository} from "../repository/product.repository";
 import {Observable} from "rxjs";
+import {IProduct} from "../model/product.model";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,10 @@ export class ProductService {
 
   public fetchProducts(max: number, page: number): Observable<any> {
     return this.productRepository.getProducts(max, page);
+  }
+
+  public saveProduct(requestBody: IProduct) {
+    return this.productRepository.createProduct(requestBody);
   }
 }
 
