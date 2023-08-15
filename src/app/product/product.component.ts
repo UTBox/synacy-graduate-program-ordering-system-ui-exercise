@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductService} from "./service/product.service";
-import {IProduct} from "./model/product.model";
+import {ProductService} from "./service/product.service"
+import {PageResponse} from "./model/page-response.model";
 
 @Component({
   selector: 'app-product',
@@ -9,23 +9,23 @@ import {IProduct} from "./model/product.model";
 })
 export class ProductComponent implements OnInit {
 
-  public products: IProduct[] = []
+  public productsInPage: any = {};
+  public readonly MAX_LIMIT = 5;
   constructor(private productService: ProductService) {
   }
   public addProduct() {
-    console.log("hello");
+    console.log("add product");
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.initializeProducts()
   }
 
-  private initializeProducts() {
-    this.productService.fetchProducts()
-      .then((data: any): void => {
-        console.log(data)
-        }, () => {
-
-        });
+  private initializeProducts(): void {
+    this.productService.fetchProducts(this.MAX_LIMIT, 1)
+      .subscribe({ next: (data: PageResponse) =>  {
+        console.log('Response:', data);
+        this.productsInPage = data;
+        }})
   }
 }

@@ -19,12 +19,12 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <th>1</th>
-        <th>Product 1</th>
-        <th>Description for Product 1</th>
-        <th>100</th>
-        <th>$ 20.00</th>
+      <tr *ngFor="let product of productsInPage.content">
+        <th>{{ product.id }}</th>
+        <th>{{ product.name }}</th>
+        <th>{{ product.description }}</th>
+        <th>{{ product.productQuantity }}</th>
+        <th>{{ product.currency + ' ' + product.unitPrice }}</th>
       </tr>
       </tbody>
     </table>

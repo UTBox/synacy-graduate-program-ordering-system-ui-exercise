@@ -1,7 +1,10 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
 
-@Injectable({providedIn: 'root'})
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductRepository {
 
   private readonly CONTENT_TYPE = 'application/json';
@@ -13,8 +16,8 @@ export class ProductRepository {
     })
   }
 
-  public getProducts() {
-    const getProductsUrl = 'api/v1/product';
-    return this.httpClient.get(getProductsUrl, {headers: this.headers}).toPromise();
+  public getProducts(max: number, page: number): Observable<any> {
+    const getProductsUrl = 'api/v1/product?max=' + max + '&page=' + page;
+    return this.httpClient.get<any>(getProductsUrl, {headers: this.headers});
   }
 }
