@@ -1,4 +1,8 @@
 <div class="content">
+  <div>
+    <app-alert [isShow]="successMessage" [state]="alertState.SUCCESS">{{successMessage}}</app-alert>
+    <app-alert [isShow]="errorMessage" [state]="alertState.ERROR">{{errorMessage}}</app-alert>
+  </div>
   <div class="header">
     <h1>Update Product</h1>
   </div>

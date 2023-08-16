@@ -4,6 +4,7 @@ import {IProduct} from "../model/product.model";
 import {ProductService} from "../service/product.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {RouterService} from "../service/router.service";
+import {AlertState} from "../../shared/alert/state.enum";
 
 @Component({
   selector: 'app-edit',
@@ -12,7 +13,10 @@ import {RouterService} from "../service/router.service";
 })
 export class EditComponent {
 
+  protected readonly alertState = AlertState
   addProductForm: FormGroup
+  public successMessage: any = ''
+  public errorMessage: any = ''
 
   constructor(private productService: ProductService, private routerService: RouterService) {
     const product: IProduct = this.routerService.getQueryParams().product
@@ -25,12 +29,15 @@ export class EditComponent {
     })
   }
 
-  public onSubmit() {
+  onSubmit() {
     const productToSave = this.addProductForm.getRawValue();
     this.productService.updateProduct(productToSave).subscribe({next: (data) => {
         console.log('Product updated successfully:', data);
-        this.routerService.navigate(['/product']).then(error => {
-          console.error('Error updating product:', error);});
-      }});
+        //this.routerService.navigate(['/product']);
+        this.successMessage = 'Updated Successfully'
+      }, error: (err) => {
+      this.errorMessage = 'An error occurred'
+      }
+    });
   }
 }
