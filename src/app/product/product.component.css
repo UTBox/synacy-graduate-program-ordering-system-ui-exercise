@@ -1,0 +1,16 @@
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+table {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+tr > th, tr > td {
+  border: 1px solid lightgrey;
+}

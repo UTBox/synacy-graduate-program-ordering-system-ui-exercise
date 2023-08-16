@@ -1,0 +1,37 @@
+<div class="content">
+  <div class="header">
+    <h1>Products</h1>
+
+    <div class="actions">
+      <button routerLink="add">Add Product</button>
+<!--      <app-button buttonText="Add Product" routerLink="/add"></app-button>-->
+    </div>
+  </div>
+
+  <div class="body">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of productsInPage.content">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.currency + ' ' + product.unitPrice }}</td>
+        <td>{{ product.productQuantity }}</td>
+        <td>
+          <app-button (clickAction)="editProduct(product)" buttonText="Edit"></app-button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
