@@ -29,4 +29,9 @@ export class ProductRepository {
     const updateProductUrl = this.baseUrl + '/product/' + updatedProduct.id;
     return this.httpClient.put<any>(updateProductUrl, updatedProduct, {headers: this.headers});
   }
+
+  public removeProduct(removeProduct: number){
+    const removeProductUrl = this.baseUrl + '/product/' + removeProduct;
+    return this.httpClient.delete(removeProductUrl, {headers: this.headers})
+  }
 }
