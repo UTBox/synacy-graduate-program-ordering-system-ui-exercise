@@ -3,7 +3,10 @@
         <h1> Products</h1>
 
         <div class="actions">
-            <button (click)="addProduct()" class="btn"> Add Product</button>
+<!--           <button (click)="addProduct()" class="btn"> Add Product</button>-->
+            <button routerLink="add">Add Product </button>
+<!--            <app-button (clickAction)="addProduct()" buttonText="Add Product"></app-button>-->
+
         </div>
     </div>
 </div>
@@ -17,10 +20,18 @@
             <th>Description</th>
             <th>Price</th>
             <th>Quantity</th>
+
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr *ngFor="let product of productsInPage">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.currency + ' ' + product.unitPrice}}</td>
+            <td>{{product.quantity}}</td>
+
+
             <td>1</td>
             <td>Bag</td>
             <td> Test description</td>

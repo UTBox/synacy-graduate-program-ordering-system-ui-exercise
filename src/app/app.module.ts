@@ -4,20 +4,27 @@ import {AppComponent} from './app.component';
 
 import {ProductComponent} from './product/product.component';
 import {AppRoutingModule} from "./app-routing.module";
-import { DeviceComponent } from './device/device.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ButtonComponent} from './shared/button/button.component';
+import {AddProductComponent} from './product/add/add.product.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
       AppComponent,
       ProductComponent,
-      DeviceComponent
+      ButtonComponent,
+      AddProductComponent,
   ],
-  imports: [
-    BrowserModule,
-      AppRoutingModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
