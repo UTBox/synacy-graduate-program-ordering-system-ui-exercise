@@ -19,4 +19,7 @@ export class ProductService {
   public savedProduct(requestBody:IProduct){
         return this.productRepository.createProduct(requestBody);
     }
+    public editProduct(requestBody:IProduct){
+    return this.productRepository.editProduct(requestBody);
+    }
 }

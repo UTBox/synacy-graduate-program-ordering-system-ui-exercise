@@ -4,6 +4,6 @@ export  interface IProduct {
   name: string;
   description: string;
   unitPrice: number;
-  quantity: number;
+  productQuantity: number;
 
 }

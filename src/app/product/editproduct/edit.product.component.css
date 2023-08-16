@@ -1,0 +1,19 @@
+button {
+    background-color: cornflowerblue;
+    color: antiquewhite;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 9px;
+}
+button:hover{
+    cursor: pointer;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    gap: 2px;
+}

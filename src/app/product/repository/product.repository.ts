@@ -5,7 +5,7 @@ import {IProduct} from "../model/product.model";
 @Injectable({providedIn: "root"})
 export class ProductRepository {
 
-    private readonly baseUrl: string = 'application/json';
+    private readonly baseUrl: string = 'api/v1/';
     private readonly CONTENT_TYPE: string = 'application/json';
     private readonly headers;
 
@@ -25,14 +25,11 @@ export class ProductRepository {
         console.log(requestBody)
         const createProductUrl: string = this.baseUrl + '/product';
         return this.httpClient.post(createProductUrl, requestBody, {headers: this.headers})
-            // .subscribe({
-            //     next: (data) => {
-            //         console.log('success');
-            //     },
-            //     error: (error) => {
-            //         console.log('error', error);
-            //     }
-            // })
 
+
+    }
+    public editProduct(requestBody: IProduct) {
+        const updateProductUrl: string = this.baseUrl + '/product/' +requestBody.id;
+        return this.httpClient.put(updateProductUrl, requestBody, {headers: this.headers})
     }
 }
