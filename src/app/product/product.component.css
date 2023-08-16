@@ -1,30 +1,17 @@
 .content {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin: 20px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.header h1 {
-  display: flex;
-  font-size: 26px;
-  margin: 20px 0;
-  text-align: center;
-  justify-content: space-between;
-  font-family: 'lato', sans-serif;
-}
-
-.table-header {
-  background-color: #95A5A6;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+h1 {
+  font-size: 24px;
+  color: #333;
 }
 
 .actions {
@@ -32,40 +19,60 @@
   align-items: center;
 }
 
-.actions button {
+button {
+  padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
-  padding: 8px 15px;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.body table {
-  border-radius: 5px;
-  display: table;
+button:hover {
+  background-color: #0056b3;
+}
+
+.body {
+  margin-top: 20px;
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'lato', sans-serif;
 }
 
-
-h1 {
-  font-size: 26px;
-  margin: 20px 0;
-  text-align: center;
-}
-
-tr > th, tr > td {
-  border: 1px solid black;
+th, td {
+  padding: 10px;
   text-align: left;
-  padding: 8px;
+  border-bottom: 1px solid #ddd;
 }
 
-thead {
-  background-color: blanchedalmond;
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 
-tbody th {
-  background-color: cornflowerblue;
+.action-buttons {
+  display: flex;
+}
+
+.edit-button, .delete-button {
+  margin-right: 10px;
+}
+
+.app-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.app-button:hover {
+  background-color: #0056b3;
 }

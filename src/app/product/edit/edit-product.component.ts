@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {ProductRepository} from "../repository/product.repository";
 import {IProduct} from "../model/product.model";
 import {ProductService} from "../service/product.service";
 import {FormControl, FormGroup} from "@angular/forms";
@@ -8,10 +7,10 @@ import {AlertState} from "../../shared/alert/state.enum";
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  templateUrl: './edit-product.component.html',
+  styleUrls: ['./edit-product.component.css']
 })
-export class EditComponent {
+export class EditProductComponent {
 
   protected readonly alertState = AlertState
   addProductForm: FormGroup
