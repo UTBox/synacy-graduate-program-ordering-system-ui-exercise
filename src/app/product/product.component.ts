@@ -23,6 +23,10 @@ export class ProductComponent implements OnInit {
     this.routerService.navigate('/product/edit', {'product': product})
   }
 
+  public removeProduct(product: any) {
+    this.routerService.navigate('/product/delete', {'product': product})
+  }
+
   ngOnInit() {
     this.initializeProducts()
   }

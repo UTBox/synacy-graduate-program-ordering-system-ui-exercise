@@ -3,12 +3,10 @@
     <h1>Products</h1>
     <div class="actions">
       <button routerLink="add">Add Product</button>
-<!--      <app-button (clickAction)="addProduct()" [buttonText]="'Add Product'"></app-button>-->
     </div>
   </div>
 
   <div class="body">
-
     <table class="responsive-table">
       <thead class="table-header">
       <tr>
@@ -29,13 +27,18 @@
         <td>{{ product["quantity"] }}</td>
         <td>{{ product["currency"] + ' ' + product["unitPrice"] }}</td>
         <td>
-          <div class="edit-button">
-          <app-button (clickAction)="editProduct(product)" buttonText="Edit" routerLink="edit"></app-button>
+          <div class="action-buttons">
+            <div class="edit-button">
+              <app-button (clickAction)="editProduct(product)" buttonText="Edit" routerLink="edit">Edit</app-button>
+            </div>
+
+            <div class="delete-button">
+              <app-button (clickAction)="removeProduct(product)" buttonText="Delete" routerLink="delete">Delete</app-button>
+            </div>
           </div>
         </td>
       </tr>
       </tbody>
-
     </table>
   </div>
 </div>
