@@ -1,1 +1,3 @@
-<p>alert works!</p>
+<div *ngIf="isShow" class="alert" [ngClass]="state">
+  <ng-content></ng-content>
+</div>

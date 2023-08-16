@@ -1,0 +1,22 @@
+.alert {
+  padding: 12px;
+  box-shadow: 0 3px 8px rgba(12, 57, 129, 0.08);
+  background: #FEF6F6;
+  border: 1px solid lightblue;
+}
+
+.success {
+  background: mediumseagreen;
+}
+
+.error {
+  background: red;
+}
+
+.warning {
+  background: lightcoral;
+}
+
+.info {
+  background: lightblue;
+}
