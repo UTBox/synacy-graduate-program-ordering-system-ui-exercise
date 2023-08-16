@@ -9,7 +9,6 @@
   </nav>
   <div class="header">
     <h1>Products</h1>
-    <button routerLink="add">Add Product</button>
    <!-- <app-button [buttonText]="'Add Product'" (clickAd)="addProduct()"></app-button>-->
   </div>
   <div>
@@ -21,6 +20,7 @@
         <th class="header-cell">Description</th>
         <th class="header-cell">Price</th>
         <th class="header-cell">Quantity</th>
+        <th class="header-cell">Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -30,8 +30,16 @@
         <td class="data-cell">{{product.description}}</td>
         <td class="data-cell">{{product.currency + ' ' + product.unitPrice}}</td>
         <td class="data-cell">{{product.productQuantity}}</td>
+        <td>
+          <button class="btn" (click)="editProduct(product)">Edit</button>
+        </td>
+
       </tr>
       </tbody>
     </table>
+    <button class="btn" routerLink="add">Add Product</button>
+    <button class="btnDlt" routerLink="add">Delete Product</button>
+
+
   </div>
 </div>

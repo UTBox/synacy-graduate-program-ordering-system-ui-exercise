@@ -1,0 +1,16 @@
+.alerter{
+padding: 12px;
+  background-color: gray;
+}
+.success{
+  background-color: #4caf50;
+}
+.warning{
+  background-color: lightcoral;
+}
+.error{
+  background-color: red;
+}
+.info{
+  background-color: lightblue;
+}
