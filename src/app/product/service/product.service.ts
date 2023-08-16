@@ -24,4 +24,8 @@ export class ProductService {
   public updateProduct(updatedProduct: IProduct): Observable<any> {
     return this.productRepository.updateProduct(updatedProduct);
   }
+
+  public removeProduct(removeProduct: number): Observable<any> {
+    return this.productRepository.removeProduct(removeProduct)
+  }
 }
