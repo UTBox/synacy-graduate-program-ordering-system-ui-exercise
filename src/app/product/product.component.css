@@ -10,6 +10,10 @@
   border-collapse: collapse;
 }
 
+th {
+  background-color: #f0f0f0;
+}
+
 tr > th, tr > td {
   border: 1px solid gray;
   text-align: left;
@@ -20,3 +24,7 @@ tr *:first-child {
   text-align: center;
 }
 
+tr *:last-child {
+  text-align: center;
+  padding: 0;
+}

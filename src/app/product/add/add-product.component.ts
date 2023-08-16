@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import {ProductService} from "../service/product.service";
 import {Router} from "@angular/router";
+import {AlertState} from "../../shared/alert/state.enum";
 
 @Component({
   selector: 'app-add',
@@ -11,6 +12,11 @@ import {Router} from "@angular/router";
 export class AddProductComponent {
 
   public addProductForm: FormGroup;
+
+  protected readonly AlertState = AlertState;
+  public message: string = '';
+  public successMessage ='';
+  public errorMessage = '';
 
   constructor(private productService: ProductService, private router: Router) {
     this.addProductForm = new FormGroup<any>( {
@@ -28,7 +34,11 @@ export class AddProductComponent {
       .subscribe({
         next: (data) => {
           this.router.navigate(['/product'])
+        },
+        error: (err) => {
+          this.errorMessage = 'Failed'
         }
       });
   }
+
 }

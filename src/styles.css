@@ -7,9 +7,9 @@
 .header {
   display: flex;
   justify-content: space-between;
+  font-family: sans-serif;
 }
 
-.header button {
-  padding: 10px;
-  cursor: pointer;
+.actions app-button{
+  border: 1px solid black;
 }

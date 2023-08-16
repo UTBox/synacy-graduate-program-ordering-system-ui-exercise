@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "./service/product.service"
 import {PageResponse} from "./model/page-response.model";
+import {IProduct} from "./model/product.model";
+import {RouterService} from "./service/router.service";
 
 @Component({
   selector: 'app-product',
@@ -9,9 +11,14 @@ import {PageResponse} from "./model/page-response.model";
 })
 export class ProductComponent implements OnInit {
 
-  public productsInPage: any = {};
+  public productsInPage: PageResponse = {
+    content: [],
+    pageNumber: 0,
+    totalCount: 0
+  };
   public readonly MAX_LIMIT = 20;
-  constructor(private productService: ProductService) {
+  public message: string = '';
+  constructor(private productService: ProductService, private routerService: RouterService) {
   }
   public addProduct() {
     console.log("add product");
@@ -27,5 +34,10 @@ export class ProductComponent implements OnInit {
         console.log('Response:', data);
         this.productsInPage = data;
         }})
+  }
+
+  public editProduct(product: any) {
+    console.log('edit product', product);
+    this.routerService.navigate('/product/edit', {'product': product});
   }
 }

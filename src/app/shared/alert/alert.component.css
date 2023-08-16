@@ -1,0 +1,26 @@
+.alert {
+  padding: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
+  color: red;
+}
+
+.error {
+  color: darkred;
+  background-color: lightcoral;
+}
+
+.success {
+  color: darkgreen;
+  background-color: lightgreen;
+}
+
+.warning {
+  color: darkorange;
+  background-color: lightsalmon;
+}
+
+.info {
+  color: black;
+  background-color: lightgrey;
+}

@@ -24,16 +24,15 @@ export class ProductRepository {
   }
 
   public createProduct(requestBody: IProduct) {
-    console.log(requestBody);
+    console.log('create product:', requestBody);
     const createProductUrl = this.baseUrl + '/product';
     return this.httpClient.post(createProductUrl, requestBody, {headers: this.headers});
-      // .subscribe({
-      //   next: (data) => {
-      //     console.log('success', data)
-      //   },
-      //   error: (error) => {
-      //     console.log('err', error)
-      //   }
-      // })
+  }
+
+  public editProduct(requestBody: IProduct) {
+    console.log('edit product:', requestBody);
+    const editProductUrl = this.baseUrl + '/product/' + requestBody.id;
+    console.log(editProductUrl);
+    return this.httpClient.put<any>(editProductUrl, requestBody, {headers: this.headers});
   }
 }

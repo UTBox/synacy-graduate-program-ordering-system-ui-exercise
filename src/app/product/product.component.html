@@ -3,10 +3,11 @@
   <div class="header">
     <h1>Products</h1>
     <div class="actions">
-<!--      <app-button buttonText="Add Product" (clickAction)="addProduct()"></app-button>-->
-      <button routerLink="add">Add Product</button>
+      <app-button routerLink="add">Add Product</app-button>
     </div>
   </div>
+
+  <app-alert [isShow]="message != ''">{{ message }}</app-alert>
 
   <div class="body">
     <table>
@@ -17,6 +18,7 @@
         <th>Description</th>
         <th>Quantity</th>
         <th>Unit Price</th>
+        <th>Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -26,6 +28,7 @@
         <td>{{ product.description }}</td>
         <td>{{ product.productQuantity }}</td>
         <td>{{ product.currency + ' ' + product.unitPrice }}</td>
+        <td><app-button (clickAction)="editProduct(product)">Edit</app-button></td>
       </tr>
       </tbody>
     </table>
