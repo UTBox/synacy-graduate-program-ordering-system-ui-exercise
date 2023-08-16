@@ -20,4 +20,8 @@ export class ProductService {
     console.log(requestBody);
     return this.productRepository.createProduct(requestBody);
   }
+
+  public updateProduct(updatedProduct: IProduct): Observable<any> {
+    return this.productRepository.updateProduct(updatedProduct);
+  }
 }

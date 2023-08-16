@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "./service/product.service";
 import {PageResponse} from "./model/page-response.model";
+import {RouterService} from "./service/router.service";
 
 @Component({
   selector: 'app-product',
@@ -14,11 +15,12 @@ export class ProductComponent implements OnInit {
   private readonly MAX_LIMIT: number = 8
 
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private routerService: RouterService) {
   }
 
-  public addProduct() {
-    console.log('add product');
+  public editProduct(product: any) {
+    console.log('edit product', product);
+    this.routerService.navigate('/product/edit', {'product': product})
   }
 
   ngOnInit() {

@@ -10,7 +10,13 @@ export class RouterService{
 
   }
 
-  public navigate(url, queryParams: any) {
+  public navigate(url: any, queryParams?: any) {
     return this.router.navigate([url], {state: {queryParams: queryParams}})
+  }
+
+  public getQueryParams() {
+    if (window.history.state) {
+      return window.history.state.queryParams;
+    }
   }
 }

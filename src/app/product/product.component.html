@@ -17,6 +17,7 @@
         <th>Description</th>
         <th>Quantity</th>
         <th>Unit Price</th>
+        <th>Actions</th>
       </tr>
       </thead>
 
@@ -25,8 +26,13 @@
         <th>{{ product["id"] }}</th>
         <td>{{ product["name"] }}</td>
         <td>{{ product["description"] }}</td>
-        <td>{{ product["productQuantity"] }}</td>
+        <td>{{ product["quantity"] }}</td>
         <td>{{ product["currency"] + ' ' + product["unitPrice"] }}</td>
+        <td>
+          <div class="edit-button">
+          <app-button (clickAction)="editProduct(product)" buttonText="Edit" routerLink="edit"></app-button>
+          </div>
+        </td>
       </tr>
       </tbody>
 
