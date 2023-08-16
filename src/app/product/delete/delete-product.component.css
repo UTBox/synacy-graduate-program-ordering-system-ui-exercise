@@ -1,0 +1,67 @@
+/* Delete Product Component CSS */
+
+.delete-product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.delete-product-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.delete-product-message {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #666666;
+}
+
+.delete-product-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-product-button {
+  background-color: #ff4d4d;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.delete-product-button:hover {
+  background-color: #ff3333;
+}
+
+.delete-product-button:active {
+  background-color: #ff1a1a;
+}
+
+.back-button {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 12px 24px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #f2f2f2;
+}
+
+.back-button:active {
+  background-color: #e6e6e6;
+}
