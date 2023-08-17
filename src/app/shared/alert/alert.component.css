@@ -1,0 +1,25 @@
+.alert{
+  padding: 12px;
+  border: 1px solid;
+  background-color: #f9f9f9;
+  box-shadow: 0 3px 8px rgba(249, 249, 249, 1);
+  margin: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+.success{
+  background-color: darkseagreen;
+}
+
+.error{
+  background-color: red;
+}
+
+.warning{
+  background-color: lightcoral;
+}
+
+.info{
+  background-color: lightblue;
+}

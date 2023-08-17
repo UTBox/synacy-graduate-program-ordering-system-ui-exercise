@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+.actions{
+  display: flex;
+  align-items: center;
+}
+
+.back-btn{
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 12px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+button{
+  cursor: pointer;
+}
+
+.content{
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+
+form{
+  width: 100%;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+label{
+  font-weight: bold;
+}
+
+input{
+  margin-top: 10px;
+  height: 30px;
+  width: 25%;
+}

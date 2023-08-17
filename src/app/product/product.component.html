@@ -3,8 +3,7 @@
     <h1>Products</h1>
 
     <div class="actions">
-<!--      <app-button [buttonText] = "'Add Product'" (clickAction)="addProduct()"></app-button>-->
-    <button (click)="addProduct()" routerLink="add">Add Product</button>
+      <button class="submit-btn" (click)="addProduct()" routerLink="add">Add Product</button>
     </div>
   </div>
 
@@ -17,7 +16,7 @@
           <th>Description</th>
           <th>Price</th>
           <th>Quantity</th>
-<!--          <th>Actions</th>-->
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -27,6 +26,7 @@
           <td>{{ product.description }}</td>
           <td>{{ product.currency + ' ' + product.unitPrice}}</td>
           <td>{{ product.productQuantity }}</td>
+          <td class="editTd"><app-button (clickAction) = "editProduct(product)"  routerLink="edit">Edit</app-button></td>
         </tr>
       </tbody>
     </table>
