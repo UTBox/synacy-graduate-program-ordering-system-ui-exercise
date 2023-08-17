@@ -35,4 +35,11 @@ export class ProductRepository {
     console.log(editProductUrl);
     return this.httpClient.put<any>(editProductUrl, requestBody, {headers: this.headers});
   }
+
+  public deleteProduct(requestBody: IProduct) {
+    console.log('delete product c:', requestBody);
+    const deleteProductUrl = this.baseUrl + '/product/' + requestBody.id;
+    console.log(deleteProductUrl);
+    return this.httpClient.delete(deleteProductUrl, {headers: this.headers});
+  }
 }

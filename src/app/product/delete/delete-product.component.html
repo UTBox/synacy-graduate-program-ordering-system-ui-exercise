@@ -1,0 +1,6 @@
+<div *ngIf="isShow" class="delete" [ngClass]="state">
+  Are you sure you want to delete?
+<!--  <app-button (clickAction)="cancelDelete()">Back</app-button>-->
+  <app-button routerLink="product">Back</app-button>
+  <app-button (clickAction)="deleteProduct()">Delete</app-button>
+</div>

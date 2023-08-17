@@ -3,6 +3,7 @@ export interface  IProduct {
   name: string
   description: string
   productQuantity: number
+  status: string
   unitPrice: number
   currency: string
 }

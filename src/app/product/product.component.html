@@ -8,7 +8,6 @@
   </div>
 
   <app-alert [isShow]="message != ''">{{ message }}</app-alert>
-
   <div class="body">
     <table>
       <thead>
@@ -16,6 +15,7 @@
         <th>ID</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Status</th>
         <th>Quantity</th>
         <th>Unit Price</th>
         <th>Actions</th>
@@ -26,9 +26,13 @@
         <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.description }}</td>
+        <td>{{ product.status }}</td>
         <td>{{ product.productQuantity }}</td>
         <td>{{ product.currency + ' ' + product.unitPrice }}</td>
-        <td><app-button (clickAction)="editProduct(product)">Edit</app-button></td>
+        <td>
+          <div class="productAction"><app-button (clickAction)="editProduct(product)">Edit</app-button></div>
+          <div class="productAction"><app-button (clickAction)="deleteProduct(product)">Delete</app-button></div>
+        </td>
       </tr>
       </tbody>
     </table>

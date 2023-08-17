@@ -11,6 +11,7 @@ import { AddProductComponent } from './product/add/add-product.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EditProductComponent } from './product/edit/edit-product.component';
 import { AlertComponent } from './shared/alert/alert.component';
+import { DeleteProductComponent } from './product/delete/delete-product.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AlertComponent } from './shared/alert/alert.component';
     ButtonComponent,
     AddProductComponent,
     EditProductComponent,
-    AlertComponent
+    AlertComponent,
+    DeleteProductComponent
   ],
   imports: [
     HttpClientModule,

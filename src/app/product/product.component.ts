@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   };
   public readonly MAX_LIMIT = 20;
   public message: string = '';
+  public deleteMessage: boolean = false;
   constructor(private productService: ProductService, private routerService: RouterService) {
   }
   public addProduct() {
@@ -39,5 +40,11 @@ export class ProductComponent implements OnInit {
   public editProduct(product: any) {
     console.log('edit product', product);
     this.routerService.navigate('/product/edit', {'product': product});
+  }
+
+  public deleteProduct(product: any) {
+    console.log('delete product', product);
+    this.deleteMessage = true;
+    this.routerService.navigate('/product/delete', {'product': product});
   }
 }
