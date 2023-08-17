@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AddProductComponent} from "./product/add/add.product.component";
 import {ProductComponent} from "./product/product.component";
 import {EditProductComponent} from "./product/editproduct/edit.product.component";
+import {DeleteProductComponent} from "./product/delete/delete.product.component";
 
 const routes: Routes = [
     {
@@ -10,7 +11,8 @@ const routes: Routes = [
        children: [
            {path:'', component: ProductComponent},
             { path: 'add', component: AddProductComponent},
-           { path: 'edit', component: EditProductComponent}
+           { path: 'edit', component: EditProductComponent},
+           { path: 'delete', component: DeleteProductComponent}
         ]
     },
     {path: '**', redirectTo:'product' }

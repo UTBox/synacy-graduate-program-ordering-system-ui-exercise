@@ -1,10 +1,11 @@
 <div class="content" >
- protected readonly state = state;
-<div>
-	<app-alert [isShow] = "successMessage" [state] = AlertState.SUCCESS>{{successMessage}}</app-alert>
-</div>
-	<app-alert [isShow] = "errorMessage" [state] = AlertState.ERROR> {{errorMessage}}</app-alert>
-
+    <button routerLink="product">Back</button>
+    <div>
+        <app-alert [isShow] = "successMessage" [state] = AlertState.SUCCESS>{{successMessage}}</app-alert>
+    </div>
+    <div>
+	    <app-alert [isShow] = "errorMessage" [state] = AlertState.ERROR> {{errorMessage}}</app-alert>
+    </div>
 
 	<h1> Edit Product</h1>
 

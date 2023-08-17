@@ -23,12 +23,17 @@ export class ProductComponent implements OnInit {
 
     ngOnInit() {
         this.initializeProducts()
-
     }
 
     public editProduct(product: any) {
         console.log('edit product',product);
         this.routerService.navigate ('/product/edit', {'product': product});
+    }
+
+    deleteProduct(product: any) {
+        console.log('delete product',product);
+        this.routerService.navigate ( '/product/delete', {'product': product});
+
     }
 
     private initializeProducts() {
@@ -37,6 +42,7 @@ export class ProductComponent implements OnInit {
                 next: (data: PageResponse) => {
                     console.log('Response:', data);
                     this.productsInPage = data;
-                }});
+                }
+            });
     }
 }

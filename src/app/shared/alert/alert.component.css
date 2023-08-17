@@ -6,11 +6,28 @@
     border: 1px solid lightblue;
 }
 .success {
-background:darkgray;
+    background:lightgreen;
+    border: none;
+    border-radius: 3px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
 }
 .error {
-background:darkcyan;
+background:red;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    width: fit-content;
 }
 .warning {
     background:darkorange;
 }
+.edit-button{
+    padding: 8px;
+    border: 1px solid ;
+    border-radius: 3px;
+}
+
+

@@ -1,11 +1,13 @@
 <div class="content">
     <div class="header">
-        <h1> Products</h1>
-
+        <div class="header">
+            <h1> Products</h1>
+        </div>
         <div class="actions">
 <!--           <button (click)="addProduct()" class="btn"> Add Product</button>-->
-            <button routerLink="add">Add Product </button>
+        <button routerLink="add">Add Product </button>
 <!--            <app-button (clickAction)="addProduct()" buttonText="Add Product"></app-button>-->
+
         </div>
     </div>
 </div>
@@ -30,9 +32,15 @@
             <td>{{product.currency + ' ' + product.unitPrice}}</td>
             <td>{{product.productQuantity}}</td>
 
+
+
+
             <td>
-                <app-button (clickAction)="editProduct(product)" buttonText = "Edit"></app-button>
+                <app-button (clickAction)="editProduct(product)" buttonText = "Edit"  class="edit-button" ></app-button>
+                <app-button (clickAction)="deleteProduct(product)" buttonText = "Delete"  class="delete-button" ></app-button>
             </td>
+
+
 
 
             <!--            <td>1</td>-->

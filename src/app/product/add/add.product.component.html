@@ -1,7 +1,12 @@
 <div class="content" >
 
-
-	<button routerLink="product">Back</button>
+    <button routerLink="product">Back</button>
+    <div>
+        <app-alert [isShow] = "successMessage" [state] = AlertState.SUCCESS>{{successMessage}}</app-alert>
+    </div>
+    <div>
+        <app-alert [isShow] = "errorMessage" [state] = AlertState.ERROR> {{errorMessage}}</app-alert>
+    </div>
 
 	<h1> Create Product</h1>
 

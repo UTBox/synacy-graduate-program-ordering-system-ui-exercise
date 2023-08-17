@@ -22,4 +22,8 @@ export class ProductService {
     public editProduct(requestBody:IProduct){
     return this.productRepository.editProduct(requestBody);
     }
+    public deleteProduct(requestBody:IProduct){
+    return this.productRepository.deleteProduct(requestBody);
+    }
+
 }
