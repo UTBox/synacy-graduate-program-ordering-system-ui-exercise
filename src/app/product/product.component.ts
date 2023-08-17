@@ -27,12 +27,12 @@ export class ProductComponent implements OnInit {
 
     public editProduct(product: any) {
         console.log('edit product',product);
-        this.routerService.navigate ('/product/edit', {'product': product});
+        this.routerService.navigate('/product/edit', {'product': product});
     }
 
     deleteProduct(product: any) {
         console.log('delete product',product);
-        this.routerService.navigate ( '/product/delete', {'product': product});
+        this.routerService.navigate( '/product/delete', {'product': product});
 
     }
 
