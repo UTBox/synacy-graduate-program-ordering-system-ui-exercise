@@ -21,7 +21,6 @@ export class DeleteProductComponent {
     this.productService.removeProduct(this.routerService.getQueryParams().product.id).subscribe(
       () => {
         this.successMessage = 'Product removed successfully.';
-        // Perform any additional actions after successful deletion
       },
       (error) => {
         this.errorMessage = 'Failed to remove product. Please try again.';

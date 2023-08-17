@@ -33,7 +33,6 @@ export class EditProductComponent {
     this.productService.updateProduct(productToSave).subscribe({
       next: (data) => {
         console.log('Product updated successfully:', data);
-        //this.routerService.navigate(['/product']);
         this.successMessage = 'Updated Successfully'
       }, error: (err) => {
         this.errorMessage = 'An error occurred'
