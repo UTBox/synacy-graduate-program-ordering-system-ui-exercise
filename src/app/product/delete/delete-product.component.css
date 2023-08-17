@@ -1,0 +1,20 @@
+.delete {
+  width: 50%;
+  height: 20%;
+  margin-top: 10%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.actionContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.actionContainer app-button{
+  width: 20%;
+}
+
+.delete p {
+  font-size: 30px;
+}

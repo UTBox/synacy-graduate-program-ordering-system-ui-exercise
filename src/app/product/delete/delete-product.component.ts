@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {AlertState} from "../../shared/alert/state.enum";
 import {ProductService} from "../service/product.service";
 import {RouterService} from "../service/router.service";
 import {IProduct} from "../model/product.model";
+import {PageState} from "../page-state.enum";
 
 @Component({
   selector: 'app-delete',
@@ -13,7 +13,7 @@ export class DeleteProductComponent {
 
   @Input() isShow: any = true;
 
-  @Input() state: AlertState = AlertState.INFO;
+  @Input() state: PageState = PageState.ACTIVE;
 
   public productParams: IProduct;
 

@@ -8,6 +8,13 @@
   </div>
 
   <app-alert [isShow]="message != ''">{{ message }}</app-alert>
+  <div *ngIf="isShowDeleteConfirmation" class="delete" [ngClass]="state">
+    <p>Are you sure you want to delete?</p>
+    <div class="actionContainer">
+      <app-button (clickAction)="isShowDeleteConfirmation = false">No</app-button>
+      <app-button (clickAction)="deleteProduct()">Yes</app-button>
+    </div>
+  </div>
   <div class="body">
     <table>
       <thead>
@@ -30,8 +37,10 @@
         <td>{{ product.productQuantity }}</td>
         <td>{{ product.currency + ' ' + product.unitPrice }}</td>
         <td>
-          <div class="productAction"><app-button (clickAction)="editProduct(product)">Edit</app-button></div>
-          <div class="productAction"><app-button (clickAction)="deleteProduct(product)">Delete</app-button></div>
+          <div *ngIf="product.status == 'ACTIVE'">
+            <div class="productAction"><app-button (clickAction)="editProduct(product)">Edit</app-button></div>
+            <div class="productAction"><app-button (clickAction)="deleteProductConfirmation(product)">Delete</app-button></div>
+          </div>
         </td>
       </tr>
       </tbody>

@@ -20,11 +20,13 @@ export class ProductComponent implements OnInit {
   @Input() isShowNext = true;
   @Input() state = 'page1';
 
+  public isShowDeleteConfirmation = false;
   public pages: any;
 
   public readonly MAX_LIMIT = 5;
   public pageNumber = 1;
   public totalPages = 0;
+  public productToDelete: any;
 
   public message: string = '';
   public deleteMessage: boolean = false;
@@ -74,28 +76,42 @@ export class ProductComponent implements OnInit {
     this.routerService.navigate('/product/edit', {'product': product});
   }
 
-  public deleteProduct(product: any) {
+  public deleteProductConfirmation(product: any) {
     console.log('delete product', product);
-    this.deleteMessage = true;
-    this.routerService.navigate('/product/delete', {'product': product});
+    this.isShowDeleteConfirmation = true;
+    this.productToDelete = product;
+    // this.routerService.navigate('/product/delete', {'product': product});
+  }
+
+  public deleteProduct() {
+    console.log('deleting');
+
+    this.productService.deleteProduct(this.productToDelete)
+      .subscribe({
+        next: (data) => {
+          console.log('successfully deleted', data);
+          this.fetchPagedProducts();
+          this.isShowDeleteConfirmation = false;
+          // this.routerService.navigate('/product')
+        },
+        error: (err) => {
+          console.log('delete error', err)
+        }
+      });
   }
 
   public prevPage() {
     this.pageNumber -= 1;
     this.initializeProducts();
     this.isShowNext = true;
-    if (this.pageNumber == 1) {
-      this.isShowPrev = false;
-    }
+    this.isShowPrev = this.pageNumber != 1;
   }
 
   public nextPage() {
     this.pageNumber += 1;
     this.fetchPagedProducts();
     this.isShowPrev = true;
-    if (this.pageNumber == this.totalPages) {
-      this.isShowNext = false;
-    }
+    this.isShowNext = this.pageNumber != this.totalPages;
   }
 
   public navPage(page: number) {
