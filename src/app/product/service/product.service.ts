@@ -13,7 +13,7 @@ export class ProductService {
   }
 
   public fetchProducts(max: number, page: number): Observable<any> {
-    return this.productRepository.getProducts(max,page);
+    return this.productRepository.getProducts(max, page);
   }
 
   public createProduct(requestBody: IProduct) {

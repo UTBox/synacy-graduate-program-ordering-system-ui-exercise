@@ -4,13 +4,13 @@ import {Router} from "@angular/router";
 @Injectable({
   providedIn: 'root'
 })
-export class RouterService{
+export class RouterService {
 
   constructor(private router: Router) {
 
   }
 
-  public navigate(url: any, queryParams?: any)  {
+  public navigate(url: any, queryParams?: any) {
     return this.router.navigate([url], {state: {queryParams: queryParams}})
   }
 

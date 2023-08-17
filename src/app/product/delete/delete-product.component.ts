@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AlertState} from "../../shared/alert/state.enum";
 import {ProductService} from "../service/product.service";
 import {RouterService} from "../service/router.service";
@@ -10,9 +10,9 @@ import {RouterService} from "../service/router.service";
 })
 export class DeleteProductComponent {
 
-  protected readonly alertState = AlertState
   public errorMessage: any = ''
   public successMessage: any = ''
+  protected readonly alertState = AlertState
 
   constructor(private productService: ProductService, private routerService: RouterService) {
   }

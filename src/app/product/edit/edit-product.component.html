@@ -8,16 +8,16 @@
   </div>
 
   <div class="body">
-    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" [formGroup]="addProductForm">
 
       <div>
         <label for="name">Name: </label>
-        <input id="name" type="text" formControlName="name">
+        <input formControlName="name" id="name" type="text">
       </div>
 
       <div>
         <label for="description">Description: </label> <br/>
-        <input id="description" type="text" formControlName="description">
+        <input formControlName="description" id="description" type="text">
       </div>
 
       <div>
@@ -31,11 +31,11 @@
       </div>
 
       <div class="submit-button">
-        <button type="submit" (click)="onSubmit()">Submit</button>
+        <button (click)="onSubmit()" type="submit">Submit</button>
       </div>
 
       <div class="actions">
-        <button class="back-button" type="button" routerLink="/product">Back</button>
+        <button class="back-button" routerLink="/product" type="button">Back</button>
       </div>
     </form>
   </div>

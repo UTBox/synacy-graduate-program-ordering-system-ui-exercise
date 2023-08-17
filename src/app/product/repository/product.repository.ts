@@ -20,17 +20,17 @@ export class ProductRepository {
     return this.httpClient.get(getProductsUrl, {headers: this.headers});
   }
 
-  public createProduct(requestBody: IProduct){
+  public createProduct(requestBody: IProduct) {
     const createProductUrl = this.baseUrl + '/product';
     return this.httpClient.post<any>(createProductUrl, requestBody, {headers: this.headers});
   }
 
-  public updateProduct(updatedProduct: IProduct){
+  public updateProduct(updatedProduct: IProduct) {
     const updateProductUrl = this.baseUrl + '/product/' + updatedProduct.id;
     return this.httpClient.put<any>(updateProductUrl, updatedProduct, {headers: this.headers});
   }
 
-  public removeProduct(removeProduct: number){
+  public removeProduct(removeProduct: number) {
     const removeProductUrl = this.baseUrl + '/product/' + removeProduct;
     return this.httpClient.delete(removeProductUrl, {headers: this.headers})
   }

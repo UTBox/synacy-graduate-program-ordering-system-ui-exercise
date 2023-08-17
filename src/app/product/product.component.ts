@@ -10,9 +10,10 @@ import {RouterService} from "./service/router.service";
 })
 export class ProductComponent implements OnInit {
 
-  public actionClass: string = 'actions';
   public productsInPage: any = {};
-  private readonly MAX_LIMIT: number = 8
+  private readonly MAX_LIMIT: number = 3
+  currentPage: number = 1;
+  totalPages: any;
 
 
   constructor(private productService: ProductService, private routerService: RouterService) {
@@ -32,12 +33,20 @@ export class ProductComponent implements OnInit {
   }
 
   private initializeProducts() {
-    this.productService.fetchProducts(this.MAX_LIMIT, 1)
+    this.productService.fetchProducts(this.MAX_LIMIT, this.currentPage)
       .subscribe({
         next: (data: PageResponse) => {
           console.log('Response:', data);
           this.productsInPage = data;
+          this.totalPages = Math.ceil(data.totalCount / this.MAX_LIMIT);
         }
       })
+  }
+
+  goToPage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.initializeProducts();
+    }
   }
 }

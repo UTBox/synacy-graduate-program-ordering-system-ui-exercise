@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {ProductService} from "../service/product.service";
 import {Router} from "@angular/router";
@@ -12,12 +12,12 @@ export class AddProductComponent {
 
   public addProductForm: FormGroup
 
-  constructor(private productService: ProductService, private router: Router){
+  constructor(private productService: ProductService, private router: Router) {
     this.addProductForm = new FormGroup<any>({
-      name : new FormControl(''),
+      name: new FormControl(''),
       description: new FormControl(''),
-      quantity : new FormControl(),
-      unitPrice : new FormControl()
+      quantity: new FormControl(),
+      unitPrice: new FormControl()
     })
   }
 

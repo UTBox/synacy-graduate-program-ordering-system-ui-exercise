@@ -8,9 +8,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {ButtonComponent} from './shared/button/button.component';
 import {AddProductComponent} from './product/add/add-product.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import { EditProductComponent } from './product/edit/edit-product.component';
-import { AlertComponent } from './shared/alert/alert.component';
-import { DeleteProductComponent } from './product/delete/delete-product.component';
+import {EditProductComponent} from './product/edit/edit-product.component';
+import {AlertComponent} from './shared/alert/alert.component';
+import {DeleteProductComponent} from './product/delete/delete-product.component';
 
 @NgModule({
   declarations: [

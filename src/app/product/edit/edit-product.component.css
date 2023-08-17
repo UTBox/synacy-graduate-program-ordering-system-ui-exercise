@@ -9,10 +9,10 @@
   flex-direction: column;
 }
 
-.header h1{
+.header h1 {
   display: flex;
   justify-content: center;
-  font-family:  "Roboto Light", serif;
+  font-family: "Roboto Light", serif;
 }
 
 .content label {
@@ -22,7 +22,7 @@
 }
 
 .body input[type="text"],
-.body input[type="number"]{
+.body input[type="number"] {
   width: 94%;
   padding: 8px;
   margin-bottom: 10px;
@@ -48,6 +48,7 @@
 .actions {
   display: flex;
   justify-content: flex-end;
+
   .back-button {
     background-color: #007bff;
     color: #fff;
