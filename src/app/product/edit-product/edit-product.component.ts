@@ -17,7 +17,7 @@ export class EditProductComponent {
   public successMessage: string = '';
   public errorMessage: string = '';
   public editProductForm: FormGroup;
-  constructor(private productService: ProductService, private routerService: RouterService, private router: Router) {
+  constructor(private productService: ProductService, private routerService: RouterService) {
 
     const product : IProduct = this.routerService.getQueryParams().product;
 

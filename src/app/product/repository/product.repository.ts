@@ -32,4 +32,10 @@ export class ProductRepository {
 
     return this.httpClient.put<any>(updateProductUrl, requestBody, {headers: this.headers});
   }
+
+  public deleteProduct(id : number){
+    const deleteProductUrl = this.baseUrl + '/product/' + id;
+
+    return this.httpClient.delete(deleteProductUrl, {headers: this.headers});
+  }
 }

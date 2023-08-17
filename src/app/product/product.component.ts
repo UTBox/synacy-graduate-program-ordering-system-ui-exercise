@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from "./service/product.service";
 import {PageResponse} from "./model/page-response.model";
 import {RouterService} from "./service/router.service";
-import {IProduct} from "./model/product.model";
 
 @Component({
   selector: 'app-product',
@@ -17,22 +16,28 @@ export class ProductComponent implements OnInit{
     totalCount: 0
   };
 
-  public MAX_LIMIT: number = 15;
-  constructor(private productService: ProductService, private routerService: RouterService) {
-  }
+  public MAX_LIMIT: number = 5;
+  public page : number = 1;
+  constructor(private productService: ProductService, private routerService: RouterService) {}
 
   ngOnInit(): void {
     this.initializeProducts();
   }
 
   private initializeProducts(): void{
-    this.productService.fetchProducts(this.MAX_LIMIT, 1)
+    this.productService.fetchProducts(this.MAX_LIMIT, this.page)
       .subscribe({ next: (data: PageResponse) => {
-
-        console.log('Response:' , data);
-
         this.productsInPage = data;
       }})
+  }
+  next(){
+    this.page += 1;
+    this.initializeProducts();
+  }
+
+  back(){
+    this.page -= 1;
+    this.initializeProducts();
   }
 
   public addProduct() {
@@ -43,4 +48,10 @@ export class ProductComponent implements OnInit{
     console.log(product);
     this.routerService.navigate('/product/edit', {'product': product});
   }
+
+  public deleteProduct(product: any){
+    this.routerService.navigate('product/delete', {'product':product});
+  }
+
+
 }

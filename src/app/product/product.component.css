@@ -11,7 +11,7 @@ tr > th, tr > td {
   height: 25px;
 }
 
-.editTd{
+.actionBtn{
   padding: 0 !important;
 }
 td:hover{
