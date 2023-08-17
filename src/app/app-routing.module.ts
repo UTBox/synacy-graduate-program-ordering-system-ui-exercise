@@ -12,13 +12,13 @@ const routes: Routes = [
       {path: '', component: ProductComponent},
       {path: 'add', component: AddProductComponent},
       {path: 'edit', component: EditProductComponent},
-      {path: 'delete', component: DeleteProductComponent},
-
-
+      {path: 'delete', component: DeleteProductComponent}
     ]
-  },
-  {path: '**', redirectTo: 'product'}
 
+  },
+
+
+  {path: '**', redirectTo: 'product'}
 ];
 
 @NgModule({

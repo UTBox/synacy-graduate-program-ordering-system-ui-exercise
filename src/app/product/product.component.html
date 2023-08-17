@@ -39,8 +39,8 @@
     </table>
     <div class="pagination">
       <button class="btn" routerLink="add">Add Product</button>
-      <button class="btn" (click)="previousPage()">Previous</button>
-      <button class="btn" (click)="nextPage()">Next</button>
+      <button class="btn" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+      <button class="btn" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
     </div>
   </div>
 </div>

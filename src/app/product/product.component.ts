@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   public MAX_LIMIT: number = 3;
   currentPage = 1;
   pageSize = 3;
-  totalPages = 0;
+  totalPages: any = {};
 
   constructor(private productService: ProductService, private routerService: RouterService) {}
 
@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
     this.fetchProducts();
   }
 
-  private fetchProducts(): void {
+  private fetchProducts(){
     this.productService.fetchProducts(this.MAX_LIMIT, this.currentPage).subscribe({
       next: (data: PageResponse) => {
         console.log('Response', data);
@@ -49,30 +49,16 @@ export class ProductComponent implements OnInit {
     console.log('delete product', product);
     this.routerService.navigate('/product/delete', { 'product': product });
   }
-
-  getCurrentPageItems(): any[] {
-    if (this.productsInpage && this.productsInpage.content) {
-      const startIndex = (this.currentPage - 1) * this.pageSize;
-      const endIndex = startIndex + this.pageSize;
-      return this.productsInpage.content.slice(startIndex, endIndex);
-    }
-    return [];
-  }
-
   previousPage(): void {
-    console.log('Previous Page - Before:', this.currentPage);
     if (this.currentPage > 1) {
       this.currentPage--;
-      console.log('Previous Page - After:', this.currentPage);
       this.fetchProducts();
     }
   }
 
   nextPage(): void {
-    console.log('Next Page - Before:', this.currentPage);
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
-      console.log('Next Page - After:', this.currentPage);
       this.fetchProducts();
     }
   }

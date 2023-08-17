@@ -17,7 +17,7 @@ export class ProductRepository{
   }
 
   public getProducts(max: number, page: number){
-    const getProductsUrl : string = 'api/v1/product?max=' + max + '&page' + page;
+    const getProductsUrl : string = 'api/v1/product?max=' + max + '&page=' + page;
     return this.httpClient.get<any>(getProductsUrl, {headers: this.headers})
   }
   public createProduct(requestBody: IProduct){
