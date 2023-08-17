@@ -22,4 +22,9 @@ export class ProductService{
   public editProduct(requestBody: IProduct) {
     return this.productRepository.editProduct(requestBody);
   }
+
+  public deleteProduct(id: number){
+    return this.productRepository.deleteProduct(id)
+
+  }
 }

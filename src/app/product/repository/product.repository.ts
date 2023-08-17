@@ -28,6 +28,14 @@ export class ProductRepository{
 
   public editProduct( requestBody: IProduct) {
     const editProductUrl = this.baseUrl + `/product/` + requestBody.id;
-    return this.httpClient.put(editProductUrl, requestBody, { headers: this.headers });
+    return this.httpClient.put(editProductUrl, requestBody, {headers: this.headers});
   }
+
+
+  public deleteProduct(id: number) {
+      const deleteProductUrl = this.baseUrl +`/product/` + id;
+      return this.httpClient.delete(deleteProductUrl, { headers: this.headers });
+    }
+
+
 }

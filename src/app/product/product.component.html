@@ -32,14 +32,15 @@
         <td class="data-cell">{{product.productQuantity}}</td>
         <td>
           <button class="btn" (click)="editProduct(product)">Edit</button>
+          <button class="btn" (click)="deleteProduct(product)">Delete</button>
         </td>
-
       </tr>
       </tbody>
     </table>
-    <button class="btn" routerLink="add">Add Product</button>
-    <button class="btnDlt" routerLink="add">Delete Product</button>
-
-
+    <div class="pagination">
+      <button class="btn" routerLink="add">Add Product</button>
+      <button class="btn" (click)="previousPage()">Previous</button>
+      <button class="btn" (click)="nextPage()">Next</button>
+    </div>
   </div>
 </div>

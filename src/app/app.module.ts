@@ -10,6 +10,7 @@ import { AddProductComponent } from './product/add/add-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { AlertComponent } from './shared/alert/alert.component';
+import { DeleteProductComponent } from './product/delete-product/delete-product.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AlertComponent } from './shared/alert/alert.component';
     ButtonComponent,
     AddProductComponent,
     EditProductComponent,
-    AlertComponent
+    AlertComponent,
+    DeleteProductComponent
   ],
   imports: [
     BrowserModule,

@@ -4,4 +4,7 @@ export interface PageResponse {
   totalCount: number
   pageNumber: number
   content: IProduct[]
+
 }
+
+
