@@ -37,4 +37,13 @@
       </tbody>
     </table>
   </div>
+  <div class="pageNav">
+    <div class="pageButton" id="back"
+         (click)="prevPage()"
+         *ngIf="isShowPrev"><</div>
+    <div class="pageButton" id="pages"
+         (click)="navPage(page)"
+         *ngFor="let page of pages">{{ page }}</div>
+    <div class="pageButton" id="next" (click)="nextPage()" *ngIf="isShowNext">></div>
+  </div>
 </div>

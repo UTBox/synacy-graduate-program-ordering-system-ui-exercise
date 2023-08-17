@@ -33,3 +33,24 @@ tr *:last-child {
   width: 50%;
   float: left;
 }
+
+.pageNav {
+  display: flex;
+  justify-content: center;
+  margin: 1%;
+}
+
+.pageButton {
+  display: flex;
+  padding: 10px 5%;
+  background-color: #f0f0f0;
+}
+
+.pageButton:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.pageActive {
+  background-color: gray;
+}
