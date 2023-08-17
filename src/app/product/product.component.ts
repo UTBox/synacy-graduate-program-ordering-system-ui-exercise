@@ -21,11 +21,19 @@ export class ProductComponent implements OnInit {
 
   public editProduct(product: any) {
     console.log('edit product', product);
-    this.routerService.navigate('/product/edit', {'product': product})
+    this.routerService.navigate('/product/edit', {'product': product}).then(() => {
+      console.log('Navigation successful.')
+    }).catch((error) => {
+      console.log('Navigation failed.', error)
+    })
   }
 
   public removeProduct(product: any) {
-    this.routerService.navigate('/product/delete', {'product': product})
+    this.routerService.navigate('/product/delete', {'product': product}).then(() => {
+      console.log('Navigation successful.');
+    }).catch((error) => {
+      console.log('Navigation failed.', error);
+    });
   }
 
   ngOnInit() {
