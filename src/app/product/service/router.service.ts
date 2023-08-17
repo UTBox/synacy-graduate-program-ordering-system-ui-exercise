@@ -10,7 +10,7 @@ export class RouterService {
   constructor(private router: Router) {
   }
 
-  public navigate(url, queryParams?: any) {
+  public navigate(url: any, queryParams?: any) {
     return this.router.navigate([url], {state: {queryParams: queryParams}});
   }
 }

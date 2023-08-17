@@ -8,3 +8,24 @@
   display: flex;
   justify-content: space-between;
 }
+
+.spinner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e1e1e1d9;
+}
+
+.spinner:after {
+  content: "";
+  background-image: url("assets/icons/spinner.gif");
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+}

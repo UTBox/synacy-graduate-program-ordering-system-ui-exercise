@@ -3,6 +3,7 @@ import {ProductService} from "./service/product.service";
 import {PageResponse} from "./model/page-response.model";
 import {IProduct} from "./model/product.model";
 import {RouterService} from "./service/router.service";
+import {lastValueFrom} from "rxjs";
 
 @Component({
   selector: 'app-product',
@@ -11,6 +12,7 @@ import {RouterService} from "./service/router.service";
 })
 export class ProductComponent implements OnInit {
 
+  public isLoading: boolean = false;
   public productsInPage: any = {};
   public readonly MAX_LIMIT: number = 2;
   constructor(private productService: ProductService, private routerService: RouterService) {
@@ -20,15 +22,13 @@ export class ProductComponent implements OnInit {
     this.initializeProducts();
   }
 
-  private initializeProducts(): void {
-    this.productService.fetchProducts(this.MAX_LIMIT, 1)
-      .subscribe({ next: (data: PageResponse) => {
+  private async initializeProducts() {
 
-          console.log('Response:', data);
+    this.isLoading = true;
 
-          this.productsInPage = data;
+    this.productsInPage = await lastValueFrom(this.productService.fetchProducts(this.MAX_LIMIT, 1));
 
-        }});
+    this.isLoading = false;
   }
 
   public editProduct(product: any) {
