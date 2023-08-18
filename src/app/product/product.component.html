@@ -1,0 +1,45 @@
+<div class="content">
+
+  <div class="header">
+    <h1>Products</h1>
+    <div class="actions">
+
+      <button routerLink="add">Add Product</button>
+    </div>
+  </div>
+
+  <div class="product-list">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let product of productsInpage.content">
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.currency + ' '+ product.unitPrice}}</td>
+          <td>{{product.productQuantity}}</td>
+          <td>
+            <button class="edit-button" (click)="editProduct(product)">Edit</button>
+            <button id="deleteBtn" class="delete-button" (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button (click)="nextPage()">Previous</button>
+    <button (click)="previousPage()">Next</button>
+  </div>
+
+</div>
