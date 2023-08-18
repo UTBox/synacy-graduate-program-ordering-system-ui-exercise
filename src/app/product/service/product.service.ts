@@ -1,0 +1,30 @@
+
+import {Injectable} from "@angular/core";
+import {ProductRepository} from "../repository/product.repository";
+import {IProduct} from "../model/product.model";
+
+@Injectable({
+  providedIn:'root'
+})
+
+export class ProductService{
+  constructor(private productRepository: ProductRepository) {
+  }
+
+  public fetchProducts(max: number,page: number){
+    return this.productRepository.getProducts(max,page)
+  }
+
+  public saveProduct(requestBody: IProduct){
+    return this.productRepository.createProduct(requestBody);
+  }
+
+  public editProduct(requestBody: IProduct) {
+    return this.productRepository.editProduct(requestBody);
+  }
+
+  public deleteProduct(id: number){
+    return this.productRepository.deleteProduct(id)
+
+  }
+}
