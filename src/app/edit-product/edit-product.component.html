@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="content">
+
+    <app-alert class="success" [isShow]="successMessage" [state]="AlertState.SUCCESS">{{successMessage}}</app-alert>
+    <app-alert class="error" [isShow]="errorMessage" [state]="AlertState.ERROR">{{errorMessage}}</app-alert>
+
+    <h1>Edit Product</h1>
+
+    <div class="body">
+      <form [formGroup]="editProductForm" (ngSubmit)="editProduct()">
+
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type="text" formControlName="name">
+        </div>
+
+        <div>
+          <label for="description">Description</label>
+          <input id="description" type="text" formControlName="description">
+        </div>
+
+        <div>
+          <label for="productQuantity">Quantity</label>
+          <input id="productQuantity" type="number" formControlName="productQuantity">
+        </div>
+
+        <div>
+          <label for="unitPrice">Unit Price</label>
+          <input id="unitPrice" type="number" formControlName="unitPrice">
+        </div>
+        <button type="submit">Update Product</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
