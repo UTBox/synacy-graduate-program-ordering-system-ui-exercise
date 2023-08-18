@@ -1,0 +1,39 @@
+<div class="content">
+
+  <div class="actions">
+    <button class="back-btn" routerLink="">Back</button>
+  </div>
+
+  <div class="header">
+    <h1>Create Product</h1>
+  </div>
+
+  <div class="body">
+    <form class="form-group" [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+
+     <div class="form">
+       <label for="name">Name: </label> <br>
+       <input id="name" type="text" formControlName="name">
+     </div>
+
+     <div class="form">
+       <label for="description">Description: </label> <br>
+       <input id="description" type="text" formControlName="description">
+     </div>
+
+   <div class="form">
+     <label for="unitPrice">Unit Price: </label> <br>
+     <input id="unitPrice" type="number" formControlName="unitPrice" placeholder="0.00">
+   </div>
+
+    <div class="form">
+      <label for="productQuantity">Quantity: </label> <br>
+      <input id="productQuantity" type="number" formControlName="productQuantity" placeholder="0">
+    </div>
+
+    <div>
+      <button class="submit-btn" type="submit">Submit</button>
+    </div>
+    </form>
+  </div>
+</div>

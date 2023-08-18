@@ -1,0 +1,26 @@
+table{
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+tr > th, tr > td {
+  border: solid 1px darkgrey;
+  padding: 8px;
+  height: 25px;
+}
+
+.actionBtn{
+  padding: 0 !important;
+}
+td:hover{
+  background-color: lightgrey;
+}
+thead{
+  background-color: lavender;
+}
+
+.btn{
+  padding: 8px 16px;
+}

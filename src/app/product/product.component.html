@@ -1,0 +1,41 @@
+<div class="content">
+  <div class="header">
+    <h1>Products</h1>
+    <div class="actions">
+      <button class="submit-btn" (click)="addProduct()" routerLink="add">Add Product</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productsInPage.content">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.currency + ' ' + product.unitPrice }}</td>
+          <td>{{ product.productQuantity }}</td>
+          <td class="actionBtn">
+            <app-button (clickAction) = "editProduct(product)"  routerLink="edit">Edit</app-button>
+            <app-button (clickAction)= "deleteProduct(product)" >Delete</app-button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <button (click)="back()" class="page-btn">Previous</button>
+    {{productsInPage.pageNumber}}
+    <button (click)="next()" class="page-btn">Next</button>
+    <p>Total Products: {{ productsInPage.totalCount }}</p>
+  </div>
+</div>

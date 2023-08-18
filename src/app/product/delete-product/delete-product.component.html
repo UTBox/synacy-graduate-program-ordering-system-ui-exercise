@@ -1,0 +1,18 @@
+<div class="delete-product-container">
+  <div>
+    <app-alert [isShow]="successMessage" [state]="AlertState.SUCCESS">{{successMessage}}</app-alert>
+    <app-alert [isShow]="errorMessage" [state]="AlertState.ERROR">{{errorMessage}}</app-alert>
+  </div>
+  <div class="delete-product-header">
+    <h1 class="delete-product-title">Delete Product</h1>
+  </div>
+
+  <div class="delete-product-body">
+    <p class="delete-product-message">Are you sure you want to delete this product?</p>
+
+    <div class="delete-product-actions">
+      <button (click)="deleteProduct()" class="delete-btn" type="button">Delete</button>
+      <button class="back-btn" routerLink="/product" type="button">Back</button>
+    </div>
+  </div>
+</div>
