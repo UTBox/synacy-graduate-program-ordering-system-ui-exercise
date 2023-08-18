@@ -1,0 +1,59 @@
+<div class="content">
+    <div class="header">
+        <div class="header">
+            <h1> Products</h1>
+        </div>
+        <div class="actions">
+<!--           <button (click)="addProduct()" class="btn"> Add Product</button>-->
+        <button routerLink="add">Add Product </button>
+<!--            <app-button (clickAction)="addProduct()" buttonText="Add Product"></app-button>-->
+
+        </div>
+    </div>
+</div>
+<div class="body">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of productsInPage.content">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.currency + ' ' + product.unitPrice}}</td>
+            <td>{{product.productQuantity}}</td>
+
+
+
+            <td>
+                <app-button (clickAction)="editProduct(product)" buttonText = "Edit"  class="edit-button" ></app-button>
+                <app-button (clickAction)="deleteProduct(product)" buttonText = "Delete"  class="delete-button" ></app-button>
+
+
+                <div class="pagination">
+
+
+                </div>
+            </td>
+
+
+
+
+            <!--            <td>1</td>-->
+            <!--            <td>Bag</td>-->
+            <!--            <td> Test description</td>-->
+            <!--            <td>$ 10.00</td>-->
+            <!--            <td>5</td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>

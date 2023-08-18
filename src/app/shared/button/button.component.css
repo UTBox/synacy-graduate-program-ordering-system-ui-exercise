@@ -1,0 +1,10 @@
+button{
+    border-radius: 3px;
+    border: solid 1px;
+    column-gap: 5px;
+}
+button:hover{
+    color: white;
+    padding-left: 6px  ;
+    padding-right: 6px;
+}
