@@ -1,0 +1,42 @@
+<div class="content">
+  <div>
+    <app-alert [isShow]="successMessage" [state]="alertState.SUCCESS">{{successMessage}}</app-alert>
+    <app-alert [isShow]="errorMessage" [state]="alertState.ERROR">{{errorMessage}}</app-alert>
+  </div>
+  <div class="header">
+    <h1>Update Product</h1>
+  </div>
+
+  <div class="body">
+    <form (ngSubmit)="onSubmit()" [formGroup]="addProductForm">
+
+      <div>
+        <label for="name">Name: </label>
+        <input formControlName="name" id="name" type="text">
+      </div>
+
+      <div>
+        <label for="description">Description: </label> <br/>
+        <input formControlName="description" id="description" type="text">
+      </div>
+
+      <div>
+        <label for="quantity">Quantity: </label> <br/>
+        <input formControlName="quantity" id="quantity" placeholder="0" type="number">
+      </div>
+
+      <div>
+        <label for="unitPrice">Unit Price: </label> <br/>
+        <input formControlName="unitPrice" id="unitPrice" placeholder="0.0" type="number">
+      </div>
+
+      <div class="submit-button">
+        <button (click)="onSubmit()" type="submit">Submit</button>
+      </div>
+
+      <div class="actions">
+        <button class="back-button" routerLink="/product" type="button">Back</button>
+      </div>
+    </form>
+  </div>
+</div>

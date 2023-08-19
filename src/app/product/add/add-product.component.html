@@ -1,0 +1,38 @@
+<div class="content">
+  <div class="header">
+    <h1>Create Product</h1>
+  </div>
+
+  <div class="body">
+    <form (ngSubmit)="onSubmit()" [formGroup]="addProductForm">
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input formControlName="name" id="name" type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea formControlName="description" id="description" class="form-control"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input formControlName="quantity" id="quantity" placeholder="0" type="number" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="unitPrice">Unit Price:</label>
+        <input formControlName="unitPrice" id="unitPrice" placeholder="0.0" type="number" class="form-control">
+      </div>
+
+      <div class="submit-button">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+      <div class="actions">
+        <button class="back-button btn btn-secondary" routerLink="product" type="button">Back</button>
+      </div>
+    </form>
+  </div>
+</div>

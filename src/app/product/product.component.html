@@ -1,0 +1,50 @@
+<div class="content">
+  <div class="header">
+    <h1>Products</h1>
+    <div class="actions">
+      <button routerLink="add">Add Product</button>
+    </div>
+  </div>
+
+  <div class="body">
+    <table class="responsive-table">
+      <thead class="table-header">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let product of productsInPage.content">
+        <th>{{ product["id"] }}</th>
+        <td>{{ product["name"] }}</td>
+        <td>{{ product["description"] }}</td>
+        <td>{{ product["quantity"] }}</td>
+        <td>{{ product["currency"] + ' ' + product["unitPrice"] }}</td>
+        <td>
+          <div class="action-buttons">
+            <div class="edit-button">
+              <app-button (clickAction)="editProduct(product)" buttonText="Edit" routerLink="edit">Edit</app-button>
+            </div>
+
+            <div class="delete-button">
+              <app-button (clickAction)="removeProduct(product)" buttonText="Delete" routerLink="delete">Delete</app-button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <button [disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">Previous</button>
+      <span>{{ currentPage }}</span>
+      <button [disabled]="currentPage === totalPages - 1" (click)="goToPage(currentPage + 1)">Next</button>
+    </div>
+  </div>
+</div>
