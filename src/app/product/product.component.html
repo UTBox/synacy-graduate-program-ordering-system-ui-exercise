@@ -1,0 +1,58 @@
+
+<div class="content">
+  <div class="header">
+    <h1>Products</h1>
+    <div class="actions">
+      <app-button routerLink="add">Add Product</app-button>
+    </div>
+  </div>
+
+  <app-alert [isShow]="message != ''">{{ message }}</app-alert>
+  <div *ngIf="isShowDeleteConfirmation" class="delete" [ngClass]="state">
+    <p>Are you sure you want to delete?</p>
+    <div class="actionContainer">
+      <app-button (clickAction)="isShowDeleteConfirmation = false">No</app-button>
+      <app-button (clickAction)="deleteProduct()">Yes</app-button>
+    </div>
+  </div>
+  <div class="body">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of productsInPage.content">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.status }}</td>
+        <td>{{ product.productQuantity }}</td>
+        <td>{{ product.currency + ' ' + product.unitPrice }}</td>
+        <td>
+          <div *ngIf="product.status == 'ACTIVE'">
+            <div class="productAction"><app-button (clickAction)="editProduct(product)">Edit</app-button></div>
+            <div class="productAction"><app-button (clickAction)="deleteProductConfirmation(product)">Delete</app-button></div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pageNav">
+    <div class="pageButton" id="back"
+         (click)="prevPage()"
+         *ngIf="isShowPrev"><</div>
+    <div class="pageButton" id="pages"
+         (click)="navPage(page)"
+         *ngFor="let page of pages">{{ page }}</div>
+    <div class="pageButton" id="next" (click)="nextPage()" *ngIf="isShowNext">></div>
+  </div>
+</div>

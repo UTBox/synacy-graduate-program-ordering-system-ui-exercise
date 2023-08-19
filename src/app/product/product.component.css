@@ -1,0 +1,86 @@
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.body {
+  min-height: 250px;
+}
+
+.body table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+tr > th, tr > td {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 5px;
+}
+
+tr *:first-child {
+  text-align: center;
+}
+
+tr *:last-child {
+  text-align: center;
+  padding: 0;
+}
+
+.productAction {
+  width: 50%;
+  float: left;
+}
+
+.pageNav {
+  display: flex;
+  justify-content: center;
+  margin: 1%;
+}
+
+.pageButton {
+  display: flex;
+  padding: 10px 5%;
+  background-color: #f0f0f0;
+}
+
+.pageButton:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.pageActive {
+  background-color: gray;
+}
+
+.delete {
+  width: 50%;
+  height: 20%;
+  margin-top: 5%;
+  margin-left: 20%;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.actionContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.actionContainer app-button{
+  width: 20%;
+}
+
+.delete p {
+  font-size: 30px;
+}

@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+.content {
+  padding: 5%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+}
+
+.actions app-button{
+  border: 1px solid black;
+}
