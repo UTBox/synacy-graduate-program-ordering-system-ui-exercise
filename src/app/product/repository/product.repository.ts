@@ -28,5 +28,9 @@ export class ProductRepository {
       return this.httpClient.post<any>(createProductUrl, requestBody, { headers: this.headers });
   }
 
+    public editProduct(requestBody: IProduct) {
+      const editProductUrl = this.baseUrl + '/product/' + requestBody.id;
 
+      return this.httpClient.put(editProductUrl, requestBody, { headers: this.headers });
+    }
 }

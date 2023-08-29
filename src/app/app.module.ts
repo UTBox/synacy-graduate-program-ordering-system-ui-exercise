@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ButtonComponent } from './shared/button/button.component';
-import { AddProductComponent } from './product/add/add-product.component';
+import { AddProductComponent } from './product/add-product/add-product.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { AlertComponent } from './shared/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditProductComponent } from './product/edit-product/edit-product.compon
     ProductComponent,
     ButtonComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

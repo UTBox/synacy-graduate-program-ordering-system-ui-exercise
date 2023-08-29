@@ -7,7 +7,6 @@
 
     <div class="actions">
       <button routerLink="add">Add Product</button>
-<!--      <app-button buttonText="Add Product" routerLink="/add"></app-button>-->
     </div>
   </div>
 
@@ -31,7 +30,7 @@
         <td>{{ product.currency + ' ' + product.unitPrice }}</td>
         <td>{{ product.productQuantity }}</td>
         <td>
-          <app-button (clickAction)="editProduct(product)" buttonText="Edit"></app-button>
+          <app-button (clickAction)="editProduct(product)">Edit</app-button>
         </td>
       </tr>
       </tbody>

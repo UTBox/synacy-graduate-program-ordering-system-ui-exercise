@@ -13,4 +13,5 @@ table {
 
 tr > th, tr > td {
   border: 1px solid lightgrey;
+  padding: 8px;
 }

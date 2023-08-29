@@ -13,15 +13,22 @@ import {lastValueFrom} from "rxjs";
 export class ProductComponent implements OnInit {
 
   public isLoading: boolean = false;
-  public productsInPage: any = {};
+  public productsInPage: PageResponse = {
+    content: [],
+    pageNumber: 0,
+    totalCount: 0
+  };
+
   public readonly MAX_LIMIT: number = 2;
+
+  public isFetching = false;
+
   constructor(private productService: ProductService, private routerService: RouterService) {
   }
 
   ngOnInit(): void {
     this.initializeProducts();
   }
-
   private async initializeProducts() {
 
     this.isLoading = true;
@@ -31,8 +38,7 @@ export class ProductComponent implements OnInit {
     this.isLoading = false;
   }
 
-  public editProduct(product: any) {
-    console.log('edit product', product);
-    this.routerService.navigate('edit', {'product': product});
+  public editProduct(product: IProduct) {
+    this.routerService.navigate('/product/edit', {'product': product});
   }
 }

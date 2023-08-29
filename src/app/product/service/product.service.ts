@@ -8,7 +8,6 @@ import {IProduct} from "../model/product.model";
 })
 
 export class ProductService {
-
   constructor(private productRepository: ProductRepository) {
   }
 
@@ -18,5 +17,9 @@ export class ProductService {
 
   public saveProduct(requestBody: IProduct) {
     return this.productRepository.createProduct(requestBody);
+  }
+
+  public editProduct(requestBody: IProduct) {
+    return this.productRepository.editProduct(requestBody);
   }
 }
